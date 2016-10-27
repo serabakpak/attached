@@ -1,0 +1,25 @@
+{
+  "name": "attached",
+  "version": "1.0.0",
+  "description": "Dating app which matches users based on compatibility as determined by visual personality assessments",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/serabakpak/attached.git"
+  },
+  "author": "Sera Bak",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/serabakpak/attached/issues"
+  },
+  "homepage": "https://github.com/serabakpak/attached#readme",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0",
+    "mongoose": "^4.6.5"
+  }
+}
