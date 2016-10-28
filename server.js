@@ -1,24 +1,44 @@
 // REQUIREMENTS
 var express = require('express');
 var app = express();
+var path = require('path');
+// var favicon = require('serve-favicon');
+// var logger = require('morgan');
+// var cookieParser = require('cookie-parser');
+var bodyParser = require('body-parser');
+var passport = require('passport');
 
+require('./app_api/models/db');
+require('./app_api/config/passport');
+
+
+var routesApi = require('./app_api/routes/index');
 //MIDDLEWARE
 
-app.use(express.static(__dirname + '/public'));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended: true}));
+
+app.use(passport.initialize());
+
+
+app.use(express.static(path.join(__dirname, 'public')));
 app.use('/node_modules',  express.static(__dirname + '/node_modules'));
+app.use(express.static(path.join(__dirname, 'app_client')));
 
 
-// var controllers = require('./controllers');
+app.use('/api', routesApi);
 
-//HTML ENDPOINTS
-app.get('/', function (req, res) {
-	res.sendFile(__dirname + '/views/index.html');
+
+app.use(function(req, res) {
+  res.sendFile(path.join(__dirname, 'app_client', 'index.html'));
 });
 
-app.get('/templates/:name', function templates(req, res) {
-  var name = req.params.name;
-  res.sendFile(__dirname + '/views/templates/' + name + '.html');
-});
+// app.get('/templates/:name', function templates(req, res) {
+//   var name = req.params.name;
+//   res.sendFile(__dirname + '/views/templates/' + name + '.html');
+// });
+
+
 
 //JSON ENDPOINTS
 
@@ -26,3 +46,5 @@ app.get('/templates/:name', function templates(req, res) {
 app.listen(process.env.PORT || 3000, function () {
 	console.log('HTTP server listening at localhost:3000');
 });
+
+module.exports = app;
