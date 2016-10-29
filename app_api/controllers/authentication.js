@@ -1,29 +1,55 @@
 var passport = require('passport');
 var mongoose = require('mongoose');
 var User = mongoose.model('User');
+var request = require('request');
+var assessmentId;
 
 module.exports.register = function(req, res) {
   console.log("Registering user: " + req.body.email);
-  // res.status(200);
-  // res.json({
-  //   "message" : "User registered: " + req.body.email
-  // });
-  var user = new User();
+  var user = '6uof2kodoghuvcvq7ohvv2j11l';
+  var pass = 'x';
 
-  user.name = req.body.name;
-  user.email = req.body.email;
+  var options = {
+      url: 'https://api-sandbox.traitify.com/v1/assessments',
+      method: 'POST',
+      headers: {
+        'Authorization': 'Basic ' + user + ':' + pass,
+        'Content-Type': 'application/json'     
+      },
+      json: { 
+        'deck_id': 'core' 
+      }
+  };
 
-  user.setPassword(req.body.password);
+  function callback(error, response, body) {
+      if (error) {
+          console.log('There has been an error getting the assessment ID', error);
+      }
+      if (!error) {
+          console.log(body);
+          var user = new User();         
+          user.assessmentId = body.id;
+          console.log('assessmentId is ', user.assessmentId);
+          user.name = req.body.name;
+          user.email = req.body.email;
+          
+          
+          user.setPassword(req.body.password);
 
-  user.save(function(err) {
-    var token;
-    token = user.generateJwt();
-    
-    res.status(200);
-    res.json({
-      "token" : token
-    });
-  });
+          user.save(function(err) {
+            var token;
+            token = user.generateJwt();
+            
+            res.status(200);
+            res.json({
+              "token" : token
+            });
+          });
+      }
+      console.log(response.statusCode);
+  }
+
+  request(options, callback);
 };
 
 module.exports.login = function(req, res) {

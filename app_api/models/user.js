@@ -12,6 +12,7 @@ var userSchema = new mongoose.Schema({
     type: String,
     required: true
   },
+  assessmentId: String,
   hash: String,
   salt: String
 });
