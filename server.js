@@ -22,7 +22,7 @@ app.use(passport.initialize());
 
 
 app.use(express.static(path.join(__dirname, 'public')));
-app.use('/node_modules',  express.static(__dirname + '/node_modules'));
+// app.use('/node_modules',  express.static(__dirname + '/node_modules'));
 app.use(express.static(path.join(__dirname, 'app_client')));
 
 
@@ -32,13 +32,6 @@ app.use('/api', routesApi);
 app.use(function(req, res) {
   res.sendFile(path.join(__dirname, 'app_client', 'index.html'));
 });
-
-// app.get('/templates/:name', function templates(req, res) {
-//   var name = req.params.name;
-//   res.sendFile(__dirname + '/views/templates/' + name + '.html');
-// });
-
-
 
 //JSON ENDPOINTS
 
