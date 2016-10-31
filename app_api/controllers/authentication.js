@@ -6,11 +6,11 @@ var assessmentId;
 
 module.exports.register = function(req, res) {
   console.log("Registering user: " + req.body.email);
-  var user = '6uof2kodoghuvcvq7ohvv2j11l';
+  var user = '35481e9692f1ccf188b2348491';
   var pass = 'x';
 
   var options = {
-      url: 'https://api-sandbox.traitify.com/v1/assessments',
+      url: 'https://api.traitify.com/v1/assessments',
       method: 'POST',
       headers: {
         'Authorization': 'Basic ' + user + ':' + pass,
@@ -77,3 +77,4 @@ module.exports.login = function(req, res) {
   })(req, res);
 
 };
+

@@ -22,4 +22,9 @@ function RegisterController($location, authentication) {
         $location.path('profile');
       });
   };
+
+
+
+
+
 };
