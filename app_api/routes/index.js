@@ -16,8 +16,11 @@ router.get('/profile', auth, ctrlProfile.profileRead);
 router.post('/register', ctrlAuth.register);
 router.post('/login', ctrlAuth.login);
 
+// update profile after assessment
+router.patch('/profile', auth, ctrlProfile.profileEdit);
+
 // get matches
-router.get('/matches', ctrlMatches.findMatches)
+router.get('/matches', ctrlMatches.findMatches);
 
 
 

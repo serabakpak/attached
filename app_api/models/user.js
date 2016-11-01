@@ -15,9 +15,18 @@ var userSchema = new mongoose.Schema({
   gender: String,
   preferredGender: String,
   assessmentId: String,
-  personalityBlend: String,
-  personalityType1: String,
-  personalityType2: String,
+  personalityBlend: {
+    type: String,
+    default: 'Default'
+  },
+  personalityType1: {
+    type: String,
+    default: 'Default'
+  }, 
+  personalityType2: {
+    type: String,
+    default: 'Default'
+  },
   compatiblePersonalities: String,
   hash: String,
   salt: String
