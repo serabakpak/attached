@@ -8,7 +8,7 @@ var path = require('path');
 var bodyParser = require('body-parser');
 var passport = require('passport');
 
-require('./app_api/models/db');
+require('./app_api/models/index');
 require('./app_api/config/passport');
 
 
