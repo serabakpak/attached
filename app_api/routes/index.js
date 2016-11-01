@@ -7,6 +7,7 @@ var auth = jwt({
 
 var ctrlProfile = require('../controllers/profile');
 var ctrlAuth = require('../controllers/authentication');
+var ctrlMatches = require('../controllers/matches');
 
 // profile
 router.get('/profile', auth, ctrlProfile.profileRead);
@@ -15,4 +16,10 @@ router.get('/profile', auth, ctrlProfile.profileRead);
 router.post('/register', ctrlAuth.register);
 router.post('/login', ctrlAuth.login);
 
+// get matches
+router.get('/matches', ctrlMatches.findMatches)
+
+
+
+	
 module.exports = router;

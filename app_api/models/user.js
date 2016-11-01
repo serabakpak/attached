@@ -12,7 +12,13 @@ var userSchema = new mongoose.Schema({
     type: String,
     required: true
   },
+  gender: String,
+  preferredGender: String,
   assessmentId: String,
+  personalityBlend: String,
+  personalityType1: String,
+  personalityType2: String,
+  compatiblePersonalities: String,
   hash: String,
   salt: String
 });
@@ -39,4 +45,5 @@ userSchema.methods.generateJwt = function() {
   }, "MY_SECRET"); // DO NOT KEEP YOUR SECRET IN THE CODE!
 };
 
-module.exports = mongoose.model('User', userSchema);
+var User = mongoose.model('User', userSchema);
+module.exports = User;
