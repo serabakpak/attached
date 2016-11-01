@@ -1,0 +1,70 @@
+/* COLORS */
+/*
+red-orange (adventurous)
+rgb(255, 109, 51)
+
+peach (charismatic)
+rgb(255, 181, 49)
+
+baby blue (rational)
+rgb(77, 205, 244)
+
+purple thoughtful
+rgb(181, 129, 242)
+
+seafoam green (mellow)
+rgb(108, 239, 195)
+
+salmon (social)
+rgb(252, 112, 112)
+
+yellow (reliable)
+rgb(249, 236, 78)
+*/
+
+* {
+	font-family: "Source Sans Pro", sans-serif;
+}
+
+h2, h3 {
+	text-align: center;
+}
+
+.navbar {
+	position: fixed;
+	height: 2em;
+	margin-bottom: 2em;
+	color: white;
+	 width: 100%;
+    text-align: center;
+    margin: 0;
+    top: 0;
+    background-color: #fff;
+    padding: 20px 5% 20px 5%;
+    z-index: 100;
+    left: 0;
+
+}
+#override {
+	padding: 0 15px;
+}
+
+.home-page {
+	background-image: url(https://images.unsplash.com/photo-1476554264902-ad3fd8987705?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&s=c3d2ff6dab2b726c99176d583444bae5);
+	height: 100vh;
+	background-position: center;
+	background-size: cover;
+}
+
+.hero-text {
+	position: absolute;
+  	top: 50%;
+  	left: 50%;
+  	transform: translate(-50%, -50%);
+	text-align: center;
+	color: white;
+}
+
+.tf-results {
+	margin-top: 4em;
+}
