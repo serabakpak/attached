@@ -43,14 +43,16 @@ h2, h3 {
     padding: 20px 5% 20px 5%;
     z-index: 100;
     left: 0;
+    border-radius: 0;
 
 }
+
 #override {
 	padding: 0 15px;
 }
 
 .home-page {
-	background-image: url(https://images.unsplash.com/photo-1476554264902-ad3fd8987705?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&s=c3d2ff6dab2b726c99176d583444bae5);
+	background-image: url(../images/hero.jpeg);
 	height: 100vh;
 	background-position: center;
 	background-size: cover;
