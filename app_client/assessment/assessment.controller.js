@@ -21,14 +21,14 @@ function AssessmentController (attachedData, $scope) {
 				Traitify.ui.load(vm.assessmentId, '.assessment');
 
 				Traitify.get("/assessments/"+vm.assessmentId+"?data=blend&image_pack=linear").then(function(data){
-	  				console.log('personality blend data: ', data);
+						console.log('personality blend data: ', data);
 
 
-	  				  $scope.$apply(function(){
-	  				    vm.complement = data.personality_blend.details[1].body;
-	  				    vm.conflict = data.personality_blend.details[2].body;
-	  				    
-	  				  });
+						  $scope.$apply(function(){
+						    vm.complement = data.personality_blend.details[1].body;
+						    vm.conflict = data.personality_blend.details[2].body;
+						    
+						  });
   				
 			});
 		
@@ -37,6 +37,8 @@ function AssessmentController (attachedData, $scope) {
 	      console.log(e);
 	
     });
+
+	
 
 
 }
