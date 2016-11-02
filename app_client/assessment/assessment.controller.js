@@ -18,13 +18,13 @@ function AssessmentController (attachedData, $route, $scope, $location, $http, a
       Traitify.setPublicKey('6fc3921e05954f80b20fe886de');
 			Traitify.setHost('https://api.traitify.com');
 			Traitify.setVersion('v1');  
-			    
 			Traitify.ui.load(vm.assessmentId, '.assessment');
+ 
 
 
 			Traitify.get("/assessments/"+vm.assessmentId+"?data=blend&image_pack=linear").then(function(data){
 					console.log('personality blend data: ', data);
-					  			
+
 					  $scope.$apply(function(){
 					    vm.complement = data.personality_blend.details[1].body;
 					    vm.conflict = data.personality_blend.details[2].body;
@@ -32,7 +32,7 @@ function AssessmentController (attachedData, $route, $scope, $location, $http, a
 				    	vm.user.personalityType1 = data.personality_blend.personality_type_1.name;
 				    	vm.user.personalityType2 = data.personality_blend.personality_type_2.name;
 				 
-				    	var removedPeriods = data.personality_blend.details[1].body.replace(/\./gi, '');
+				    	var removedPunctuation = data.personality_blend.details[1].body.replace(/\.|,/gi, '');
 				    	
 				    	function findCompPersonalities (paragraph) {
 				    		var newArr = [];
@@ -48,7 +48,7 @@ function AssessmentController (attachedData, $route, $scope, $location, $http, a
 				    		return newArr;
 				    	}
 
-				    	var compatibleArr = findCompPersonalities(removedPeriods);
+				    	var compatibleArr = findCompPersonalities(removedPunctuation);
 
 					    userData = {
 					    	personalityBlend: data.personality_blend.name,
@@ -67,7 +67,7 @@ function AssessmentController (attachedData, $route, $scope, $location, $http, a
 					    }).then (function editSuccess(json) {
 					      console.log('editing user', json);
 					      // $route.reload();
-					      
+
 					    }, function editError(response) {
 					      console.log('There an error editing the user(assessmentCtrl)', response);
 					    })			    
