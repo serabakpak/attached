@@ -27,7 +27,7 @@ var userSchema = new mongoose.Schema({
     type: String,
     default: 'Default'
   },
-  compatiblePersonalities: String,
+  compatiblePersonalities: [String],
   hash: String,
   salt: String
 });

@@ -26,10 +26,10 @@ module.exports.profileEdit = function(req, res) {
       if(err) {
         console.log('profileEdit error in profile.js (api controller)', err); 
       }
-      user.personalityBlend = 'TEST';
-      user.personalityType1 = 'TEST1';
-      user.personalityType2 = 'TEST2';
-      user.compatiblePersonalities = 'TEST';
+      user.personalityBlend = req.body.personalityBlend;
+      user.personalityType1 = req.body.personalityType1;
+      user.personalityType2 = req.body.personalityType2;
+      user.compatiblePersonalities = req.body.compatiblePersonalities;
       user.save(function(err, savedUser) {
         if(err) {
           console.log('saving updated user failed');
