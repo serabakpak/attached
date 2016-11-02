@@ -20,7 +20,7 @@ router.post('/login', ctrlAuth.login);
 router.patch('/profile', auth, ctrlProfile.profileEdit);
 
 // get matches
-router.get('/matches', ctrlMatches.findMatches);
+router.get('/matches', auth, ctrlMatches.findMatches);
 
 
 

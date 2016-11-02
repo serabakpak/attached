@@ -2,11 +2,14 @@ angular
 	.module('attached')
 	.controller('MatchesController', MatchesController);
 
-MatchesController.$inject = ['$http'];
-function MatchesController ($http) {
+MatchesController.$inject = ['$http', 'authentication'];
+function MatchesController ($http, authentication) {
 	$http({
 		method: 'GET',
-		url: '/api/matches' 
+		url: '/api/matches',
+		headers: {
+		  Authorization: 'Bearer '+ authentication.getToken()
+		} 
 	}).then(function successCallback(res) {
 		console.log('response for matchesCtrl', res);
 	}, function errorCallback (err) {
