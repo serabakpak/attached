@@ -1,5 +1,6 @@
 var mongoose = require('mongoose');
 var User = mongoose.model('User');
+var _ = require('lodash');
 
 module.exports.profileRead = function(req, res) {
 
@@ -18,8 +19,8 @@ module.exports.profileRead = function(req, res) {
 };
 
 module.exports.profileEdit = function(req, res) {
-  console.log('the request object', req);
-  console.log('the request params for personalityBlend is : ', req.body.personalityBlend );
+  console.log('the request params for compatibilities personalities is : ', req.body.compatiblePersonalities );
+  var uniqueCompPers = _.uniq(req.body.compatiblePersonalities);
   User
     .findById(req.user._id)
     .exec(function(err, user) {
@@ -29,7 +30,7 @@ module.exports.profileEdit = function(req, res) {
       user.personalityBlend = req.body.personalityBlend;
       user.personalityType1 = req.body.personalityType1;
       user.personalityType2 = req.body.personalityType2;
-      user.compatiblePersonalities = req.body.compatiblePersonalities;
+      user.compatiblePersonalities = uniqueCompPers;
       user.save(function(err, savedUser) {
         if(err) {
           console.log('saving updated user failed');

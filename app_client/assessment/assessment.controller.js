@@ -25,19 +25,15 @@ function AssessmentController (attachedData, $route, $scope, $location, $http, a
 			Traitify.get("/assessments/"+vm.assessmentId+"?data=blend&image_pack=linear").then(function(data){
 					console.log('personality blend data: ', data);
 					  			
-
-
-
-
 					  $scope.$apply(function(){
 					    vm.complement = data.personality_blend.details[1].body;
 					    vm.conflict = data.personality_blend.details[2].body;
 					    vm.user.personalityBlend = data.personality_blend.name;
 				    	vm.user.personalityType1 = data.personality_blend.personality_type_1.name;
 				    	vm.user.personalityType2 = data.personality_blend.personality_type_2.name;
-
-				    	var removedPunctuation = data.personality_blend.details[1].body.replace(/./gi, '');
-				    	console.log('removedPunctuation', removedPunctuation);
+				 
+				    	var removedPeriods = data.personality_blend.details[1].body.replace(/\./gi, '');
+				    	
 				    	function findCompPersonalities (paragraph) {
 				    		var newArr = [];
 				    		var oldArr = paragraph.split(' ');
@@ -52,7 +48,7 @@ function AssessmentController (attachedData, $route, $scope, $location, $http, a
 				    		return newArr;
 				    	}
 
-				    	var compatibleArr = findCompPersonalities(removedPunctuation);
+				    	var compatibleArr = findCompPersonalities(removedPeriods);
 
 					    userData = {
 					    	personalityBlend: data.personality_blend.name,
