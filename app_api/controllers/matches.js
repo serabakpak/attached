@@ -22,7 +22,7 @@ module.exports.findMatches = function (req, res) {
 			query.or(personalityType1Query);
 			query.or(personalityType2Query);
 			query.nor([{ _id: user._id }]);
-			query.limit(5);
+			query.limit(3);
 			query.exec(function (err, matches) {
 				  console.log('matches', matches);
 				  res.status(200).json(matches);

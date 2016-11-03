@@ -32,6 +32,8 @@ module.exports.register = function(req, res) {
           console.log('assessmentId is ', user.assessmentId);
           user.name = req.body.name;
           user.email = req.body.email;
+          user.gender = req.body.gender;
+          user.preferredGender = req.body.preferredGender;
           
           
           user.setPassword(req.body.password);
