@@ -1,16 +1,28 @@
 <navigation></navigation>
-<div class="assessment top-margin"></div>
+
+<section class="container" id="assessment-section">
+	<h1 class="bottom-border">What Is Your Personality?</h1>
+	<div class="slide-deck"></div>
+	<div class="results"></div>
+</section>	
+
+<section class="container-fluid" id="breakdown-section" ng-show="assessmentCompleted">
+	<h1 class="bottom-border">Your Personality Breakdown</h1>
+	<div class="personality-types"></div>
+</section>	
+	
+<section class="container" id="traits-section" ng-show="assessmentCompleted">	
+	<h1 class="bottom-border">Your Top Personality Traits</h1>
+	<div class="personality-traits"></div>
+</section>
 
 
+<section class="love container-fluid" id="love-section" ng-show="assessmentCompleted">
+	<h1 class="bottom-border">Compatibility</h1>
+	<h3>Complement</h3><br>
+	<p class="long-copy">{{assessmentCtrl.complement}}</p><br>
+	<h3>Conflict</h3><br>
+	<p class="long-copy">{{assessmentCtrl.conflict}}</p>
 
-
-
-<div class="love container">
-	<h2>Compatibility</h2>
-	<h3>Complement</h3>
-	<p>{{assessmentCtrl.complement}}</p>
-	<h3>Conflict</h3>
-	<p>{{assessmentCtrl.conflict}}</p>
-
-</div>
+</section>
 

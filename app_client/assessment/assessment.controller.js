@@ -8,7 +8,7 @@ function AssessmentController (attachedData, $route, $scope, $location, $http, a
 	var vm = this;
 	vm.complement = '';
 	vm.conflict = '';
-
+	$scope.assessmentCompleted = false;
 	attachedData.getProfile()
     .success(function(data) {
       console.log('data from assessment controller: ', data);
@@ -18,8 +18,27 @@ function AssessmentController (attachedData, $route, $scope, $location, $http, a
       Traitify.setPublicKey('6fc3921e05954f80b20fe886de');
 			Traitify.setHost('https://api.traitify.com');
 			Traitify.setVersion('v1');  
-			Traitify.ui.load(vm.assessmentId, '.assessment');
+			// Traitify.ui.load(vm.assessmentId, '.assessment');
  
+    var traitify = Traitify.ui.load(vm.assessmentId, ".slide-deck", {
+        slideDeck: {showResults: false},
+        results: {target: ".results"},
+        personalityTypes: {target: ".personality-types"},
+        personalityTraits: {target: ".personality-traits"}
+    });
+
+    traitify.results.onInitialize(function(){
+    	console.log('reveal the contents');
+  		$scope.assessmentCompleted = true;
+    	$scope.$apply();
+    });
+
+    traitify.slideDeck.onFinished(function(){
+      console.log("Finished")
+      $scope.assessmentCompleted = true;
+      $route.reload();
+    });
+
 
 
 			Traitify.get("/assessments/"+vm.assessmentId+"?data=blend&image_pack=linear").then(function(data){
