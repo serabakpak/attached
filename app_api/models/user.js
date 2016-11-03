@@ -23,18 +23,25 @@ var userSchema = new mongoose.Schema({
   assessmentId: String,
   personalityBlend: {
     type: String,
-    default: 'Default'
+    default: 'TBD'
   },
   personalityType1: {
     type: String,
-    default: 'Default'
+    default: 'TBD'
   }, 
   personalityType2: {
     type: String,
-    default: 'Default'
+    default: 'TBD'
   },
   compatiblePersonalities: [String],
-  image: String,
+  image: {
+    type: String,
+    default: 'http://ideaclicks.in/userimages/default_user.jpg'
+  },
+    bio: {
+    type: String,
+    default: 'I love long walks on the beach and candlelit dinners.'
+  }, 
   hash: String,
   salt: String
 });
