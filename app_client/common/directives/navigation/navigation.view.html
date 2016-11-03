@@ -1,18 +1,13 @@
-<div class="navbar" role="full-horizontal">
-  <div class="container">
-    <div id="navbar-main">
-    	<ul class="logo nav navbar-nav navbar-left">
-        <a href="/">attached</a>
-      </ul>
-			<ul class="nav navbar-nav navbar-right">
-			  <li ng-hide="navigationCtrl.isLoggedIn"><a href="login" id="override">Log In</a></li>
-			  <li ng-hide="navigationCtrl.isLoggedIn"><a href="register" id="override">Sign Up</a></li>
-			  <li ng-show="navigationCtrl.isLoggedIn"><a href="assessment" id="override">Assessment</a></li>
-			  <li ng-show="navigationCtrl.isLoggedIn"><a href="profile" id="override">{{ navigationCtrl.currentUser.name }}</a></li>
-			  <li ng-show="navigationCtrl.isLoggedIn"><a href="logout" id="override">Log Out</a></li>
-			</ul>
-		</div>
-	</div>
-</div>
-
-
+<nav class="navbar navbar-light navbar-fixed-top shadow">
+     <a class="navbar-brand" id="site-name" href="/">Attached</a>
+   
+			<ul class="nav navbar-nav float-xs-right">
+			  <li class="nav-item" ng-hide="navigationCtrl.isLoggedIn"><a class="nav-link" href="login">Log In</a></li>
+			  <li class="nav-item" ng-hide="navigationCtrl.isLoggedIn"><a class="nav-link" href="register">Sign Up</a></li>
+			  <li class="nav-item" ng-show="navigationCtrl.isLoggedIn"><a class="nav-link" href="assessment">Assessment</a></li>
+			  <li class="nav-item" ng-show="navigationCtrl.isLoggedIn"><a class="nav-link" href="matches">Matches</a></li>
+			  <li class="nav-item" ng-show="navigationCtrl.isLoggedIn"><a class="nav-link" href="profile">{{ navigationCtrl.currentUser.name }}</a></li>
+			  <li class="nav-item" ng-show="navigationCtrl.isLoggedIn"><a class="nav-link" href="logout">Log Out</a></li>
+		</ul>
+	
+</nav>

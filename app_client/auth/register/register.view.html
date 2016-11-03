@@ -1,10 +1,10 @@
 <navigation></navigation>
 
-<div class="container top-margin">
+<section class="container form" id="register-form">
 
   <div class="row">
-    <div class="col-md-6">
-      <h1>Register</h1>
+    
+      <h1 class="bottom-border">Register</h1>
       <p class="lead">Already a member? Please <a href="login">log in</a> instead.</p>
         <form ng-submit="registerCtrl.onSubmit()">
           <div class="form-group">
@@ -16,11 +16,27 @@
             <input type="email" class="form-control" id="email" placeholder="Enter email" ng-model="registerCtrl.credentials.email">
           </div>
           <div class="form-group">
+            <label for="gender" id="gender-label">I am a</label>
+            <select name="gender" ng-model="registerCtrl.credentials.gender">
+              <option value="choose" selected>Choose One</option>
+              <option value="Female">Female</option>
+              <option value="Male">Male</option>
+            </select>
+            <label for="preferredGender" id="gender-pref-label">looking for a</label>
+            <select name="preferredGender" ng-model="registerCtrl.credentials.preferredGender">
+              <option value="choose" selected>Choose One</option>
+              <option value="Male">Male</option>
+              <option value="Female">Female</option>
+            </select>
+          </div>
+          <div class="form-group">
             <label for="password">Password</label>
             <input type="password" class="form-control" id="password" placeholder="Password" ng-model="registerCtrl.credentials.password">
           </div>
-          <button type="submit" class="btn btn-default">Register!</button>
+          <input type="submit" id="btn-full"></input>
         </form>
-      </div>
+     
     </div>
-  </div>
+  </section>
+
+                   

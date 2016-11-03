@@ -1,20 +1,21 @@
 <navigation></navigation>
 
-<div class="container top-margin">
+<section class="container" id="profile-section">
   <div class="row">  
-    <div class="col-md-6">
-    	<h1 class="form-signin-heading">Your profile</h1>
+   
+    	<h1 class="form-signin-heading bottom-border">All About You!</h1>
 
-			<form class="form-horizontal" id="profile-form">
-			  <div class="form-group">
-			    <label class="col-sm-3 control-label">Full name</label>
-			    <p class="form-control-static">{{ profileCtrl.user.name }}</p>
-			  </div>
-			  <div class="form-group">
-			    <label class="col-sm-3 control-label">Email</label>
-			    <p class="form-control-static">{{ profileCtrl.user.email }}</p>
-			  </div>
-			</form>
+  <div class="row">
+		<div class="card shadow" id="profile-card">
+			<img ng-src="{{profileCtrl.user.image}}" id="profile-image" class="match-index-photo card-img-top" alt="{{profileCtrl.user.image}}">
+			<div class="card-block">
+				<h4 class="card-title"><a ng-href="#">{{profileCtrl.user.name}}</a><br></h4>
+				<p class="card-text">{{profileCtrl.user.email}}</p>
+			</div>
 		</div>
 	</div>
+
 </div>
+
+
+

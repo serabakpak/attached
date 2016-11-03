@@ -21,42 +21,83 @@ rgb(252, 112, 112)
 yellow (reliable)
 rgb(249, 236, 78)
 */
+@font-face{font-family:"Source Sans Pro";font-style:normal;font-weight:400;src:local("Source Sans Pro"),local("Source Sans Pro"),url(https://s3.amazonaws.com/traitify-cdn/assets/fonts/source-sans-pro.woff) format("woff")}@font-face{font-family:"Adelle Sans Bold";font-style:bold;font-weight:800;src:local("Adelle Sans Bold"),url(https://s3.amazonaws.com/traitify-cdn/assets/fonts/adelle-sans-bold.woff) format("woff")}@font-face{font-family:"Adelle Sans";font-style:normal;font-weight:400;src:local("Adelle Sans"),url(https://s3.amazonaws.com/traitify-cdn/assets/fonts/adelle-sans.woff) format("woff")}
+
 
 * {
-	font-family: "Source Sans Pro", sans-serif;
+	font-family: "Source Sans Pro", sans-serif !important;
+	/*text-align: center;*/
 }
 
-h2, h3 {
+
+h1, h2, h3 {
 	text-align: center;
 }
 
-.navbar {
-	position: fixed;
-	height: 2em;
-	margin-bottom: 2em;
-	color: white;
-	 width: 100%;
-    text-align: center;
-    margin: 0;
-    top: 0;
-    background-color: #fff;
-    padding: 20px 5% 20px 5%;
-    z-index: 100;
-    left: 0;
-    border-radius: 0;
+h3 {
+	font-size: 24px;
+}
+
+.bottom-border:after {
+    display: block;
+    height: 2px;
+    background-color: rgb(252, 112, 112);
+    content: " ";
+    width: 100px;
+    margin: 0 auto;
+    margin-top: 30px;
+    margin-bottom: 30px;
 
 }
 
-#override {
-	padding: 0 15px;
+p {
+	font-size: 1.2rem;
+
+	text-align: justify;
 }
+
+section {
+	margin-top: 1.6em;
+    padding: 80px 0;
+}
+
+.long-copy {
+    line-height: 145%;
+    width: 60%;
+	margin: 0 auto;
+	font-size: 1rem;
+	max-width: 860px;
+}
+/* --------------------------------------------------------------- */
+/* HOME */
+/* --------------------------------------------------------------- */
 
 .home-page {
-	background-image: url(../images/hero.jpeg);
+	background-image: linear-gradient(
+      rgba(0, 0, 0, 0.45), 
+      rgba(0, 0, 0, 0.45)
+    ),url(../images/hero.jpeg);
 	height: 100vh;
 	background-position: center;
 	background-size: cover;
+	position: static;
+	background-attachment: fixed;
+
 }
+.navbar {
+	background-color: whitesmoke;
+}
+
+.shadow {
+	box-shadow: 0 2px 6px 0 rgba(0,0,0,0.24);
+    transition: .3s;
+	transform: translate3d(0,0,0);
+}
+
+#site-name {
+	color: rgb(252, 112, 112);
+}
+
 
 .hero-text {
 	position: absolute;
@@ -65,8 +106,114 @@ h2, h3 {
   	transform: translate(-50%, -50%);
 	text-align: center;
 	color: white;
+	font-size: 3rem;
 }
 
-.tf-results, .top-margin {
-	margin-top: 4em;
+
+.box {
+    padding: 1%;
+}
+
+/* --------------------------------------------------------------- */
+/* FORMS */
+/* --------------------------------------------------------------- */
+
+.form {
+	width: 40%;
+}
+
+.lead {
+	text-align: center;
+}
+
+
+
+#btn-full:link,
+#btn-full:visited,
+input[type=submit] {
+    display: inline-block;
+    
+    padding: 10px 30px;
+    font-weight: 300;
+    text-decoration: none;
+    border-radius: 200px;
+    transition: background-color 0.2s, border 0.2s, color 0.2s;
+}
+
+#btn-full:link,
+#btn-full:visited,
+input[type=submit] {
+    background-color: rgb(252, 112, 112);
+    border: 1px solid rgb(252, 112, 112);
+    color: #fff;
+    margin-right: 15px;
+}
+
+
+/* --------------------------------------------------------------- */
+/* PROFILE */
+/* --------------------------------------------------------------- */
+
+#profile-section {
+	width: 30%;
+}
+
+#profile-image {
+	width: 100%;
+}
+
+#profile-card {
+	width: 100%;
+	max-width: 300px;
+	margin: 0 auto;
+
+}
+
+
+/* --------------------------------------------------------------- */
+/* ASSESSMENTS */
+/* --------------------------------------------------------------- */
+
+#breakdown-section, #love-section {
+/*	background-color: #022946;
+	color: whitesmoke;*/
+
+	background-color: #fcfcfc;
+}
+
+#breakdown-section {
+	min-height: 653px;
+}
+
+
+
+
+
+
+
+
+
+
+/*MATCHES*/
+
+.match-index-photo {
+	width: 100%;
+}
+
+.card {
+	width: 27%;
+	height: 25em;
+	max-height: 25em;
+	margin: 0 2em 0 2em;
+	padding-left: 0;
+	padding-right: 0;
+}
+
+.card-block {
+	text-align: center;
+	word-wrap: break-word;
+}
+
+.card-text {
+	text-align: center;
 }

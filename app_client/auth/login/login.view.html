@@ -1,23 +1,21 @@
 <navigation></navigation>
 
-<div class="container top-margin">
+<section class="container form" id="login-form">
   <div class="row">    
-    <div class="col-md-6">
-      <h1 class="form-signin-heading">Sign in</h1>
-      <p class="lead">Not a member? Please <a href="register">register</a> instead.</p>
+    <h1 class="form-signin-heading bottom-border">Sign in</h1>
+    <p class="lead">Not a member? Please <a href="register">register</a> instead.</p>
 
-				<form ng-submit="loginCtrl.onSubmit()">
-				  <div class="form-group">
-				    <label for="email">Email address</label>
-				    <input type="email" class="form-control" id="email" placeholder="Enter email" ng-model="loginCtrl.credentials.email">
-				  </div>
-				  <div class="form-group">
-				    <label for="password">Password</label>
-				    <input type="password" class="form-control" id="password" placeholder="Password" ng-model="loginCtrl.credentials.password">
-				  </div>
-				  <button type="submit" class="btn btn-default">Sign in!</button>
-				</form>
-			</div>
-		</div>
+		<form ng-submit="loginCtrl.onSubmit()">
+		  <div class="form-group">
+		    <label for="email">Email address</label>
+		    <input type="email" class="form-control" id="email" placeholder="Enter email" ng-model="loginCtrl.credentials.email">
+		  </div>
+		  <div class="form-group">
+		    <label for="password">Password</label>
+		    <input type="password" class="form-control" id="password" placeholder="Password" ng-model="loginCtrl.credentials.password">
+		  </div>
+		  <input type="submit" id="button"></input>
+		</form>
 	</div>
+</section>
 

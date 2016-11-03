@@ -9,7 +9,9 @@ function RegisterController($location, authentication) {
   vm.credentials = {
     name : "",
     email : "",
-    password : ""
+    password : "",
+    gender : "",
+    preferredGender: "" 
   };
 
   vm.onSubmit = function () {
@@ -19,7 +21,7 @@ function RegisterController($location, authentication) {
         alert(err);
       })
       .then(function(){
-        $location.path('profile');
+        $location.path('assessment');
       });
   };
 
