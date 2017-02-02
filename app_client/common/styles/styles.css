@@ -34,8 +34,20 @@ h1, h2, h3 {
 	text-align: center;
 }
 
+
+
+h2 {
+	padding-top: 2.5em;
+}
+
 h3 {
 	font-size: 24px;
+
+}
+
+hr {
+	margin: 1em 0 1em 0;
+
 }
 
 .bottom-border:after {
@@ -51,51 +63,106 @@ h3 {
 }
 
 p {
-	font-size: 1.2rem;
+	font-size: 1rem;
 
 	text-align: justify;
 }
 
-section {
+/*section {
 	margin-top: 1.6em;
     padding: 80px 0;
-}
+}*/
 
 .long-copy {
-    line-height: 145%;
-    width: 60%;
+    line-height: 1.5;
+    width: 80%;
 	margin: 0 auto;
 	font-size: 1rem;
 	max-width: 860px;
 }
+
+.red-orange-color {
+	color: rgb(255, 109, 51);
+}
+
+
 /* --------------------------------------------------------------- */
 /* HOME */
 /* --------------------------------------------------------------- */
 
 .home-page {
-	background-image: linear-gradient(
-      rgba(0, 0, 0, 0.45), 
-      rgba(0, 0, 0, 0.45)
-    ),url(../images/hero.jpeg);
-	height: 100vh;
+
+	height: 75%;
 	background-position: center;
 	background-size: cover;
 	position: static;
 	background-attachment: fixed;
 
 }
-.navbar {
-	background-color: whitesmoke;
+
+.video-container{
+    
+	width: 100%;
+    overflow:hidden;
+    display:block;
+    max-height: 700px;
+	position: relative;
+	
 }
 
-.shadow {
+
+
+#video-bg {
+	/*position: fixed;*/
+	right: 0;
+	bottom: 0;
+	width: auto;
+	min-width: 100%;
+	height: auto;
+	min-height: 100%;
+	z-index: -100;
+	background: transparent url(video-bg.jpg) no-repeat;
+	background-size: cover;
+}
+
+#video-mask {
+	position: absolute;
+	background-image: linear-gradient(grey, black);
+    width: 100%;
+    height: 100%;
+    opacity: 0.3;
+    top: 0;
+	
+	bottom: 0;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    /*background-image: -owg-linear-gradient(#5cb9eb, #00536d);
+    background-image: -webkit-linear-gradient(#5cb9eb, #00536d);
+    background-image: -moz-linear-gradient(#5cb9eb, #00536d);
+    background-image: -o-linear-gradient(#5cb9eb, #00536d);
+    background-image: linear-gradient(#00536d, #00536d);*/
+    opacity: .7;
+}
+
+/*.navbar {
+	background-color: whitesmoke;
+}*/
+
+/*.shadow {
 	box-shadow: 0 2px 6px 0 rgba(0,0,0,0.24);
     transition: .3s;
 	transform: translate3d(0,0,0);
-}
+}*/
 
 #site-name {
 	color: rgb(252, 112, 112);
+}
+
+#site-name:hover {
+	color: #ff9166;
+	text-decoration: none;
 }
 
 
@@ -106,13 +173,48 @@ section {
   	transform: translate(-50%, -50%);
 	text-align: center;
 	color: white;
-	font-size: 3rem;
+	font-size: 4rem;
 }
 
+i {
+	text-align: center;
+}
 
 .box {
-    padding: 1%;
+    padding: 3%;
 }
+#features-heading p {
+	line-height: 1.5;
+	padding: 3%;
+	margin: 0 auto;
+	font-size: 1rem;
+}
+
+
+
+
+.icon-big {
+	color: rgb(255, 109, 51);
+	font-size: 6em;
+	display: inline-block;
+	width: 100%;
+	text-align: center;
+
+}
+
+/* --------------------------------------------------------------- */
+/* FOOTER */
+/* --------------------------------------------------------------- */
+
+footer p {
+	text-align: center;
+	color: rgb(255, 109, 51);
+	padding: 2em;
+	font-size: .8em;
+
+}
+
+
 
 /* --------------------------------------------------------------- */
 /* FORMS */
@@ -126,13 +228,20 @@ section {
 	text-align: center;
 }
 
+.red-orange-color a {
+	color: rgb(255, 109, 51);
+	text-decoration: none;
+}
 
+.red-orange-color a:hover {
+	color: #ff9166;
+	text-decoration: none;
+}
 
 #btn-full:link,
 #btn-full:visited,
 input[type=submit] {
-    display: inline-block;
-    
+    display: inline-block;    
     padding: 10px 30px;
     font-weight: 300;
     text-decoration: none;
@@ -145,6 +254,15 @@ input[type=submit] {
 input[type=submit] {
     background-color: rgb(252, 112, 112);
     border: 1px solid rgb(252, 112, 112);
+    color: #fff;
+    margin-right: 15px;
+}
+
+#btn-full:active,
+#btn-full:hover,
+input[type=submit] {
+    background-color: #ff9166;
+    border: 1px solid #ff9166;
     color: #fff;
     margin-right: 15px;
 }
@@ -185,16 +303,14 @@ input[type=submit] {
 	min-height: 653px;
 }
 
+#love-section {
+	margin-bottom: 5em;
+}
 
 
-
-
-
-
-
-
-
-/*MATCHES*/
+/* --------------------------------------------------------------- */
+/* MATCHES */
+/* --------------------------------------------------------------- */
 
 .match-index-photo {
 	width: 100%;
@@ -217,3 +333,4 @@ input[type=submit] {
 .card-text {
 	text-align: center;
 }
+
