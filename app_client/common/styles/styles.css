@@ -36,10 +36,6 @@ h1, h2, h3 {
 
 
 
-h2 {
-	padding-top: 2.5em;
-}
-
 h3 {
 	font-size: 24px;
 
@@ -68,10 +64,9 @@ p {
 	text-align: justify;
 }
 
-/*section {
-	margin-top: 1.6em;
-    padding: 80px 0;
-}*/
+.section {
+	padding-top: 3em;
+}
 
 .long-copy {
     line-height: 1.5;
@@ -138,33 +133,24 @@ p {
     position: absolute;
     right: 0;
     top: 0;
-    /*background-image: -owg-linear-gradient(#5cb9eb, #00536d);
-    background-image: -webkit-linear-gradient(#5cb9eb, #00536d);
-    background-image: -moz-linear-gradient(#5cb9eb, #00536d);
-    background-image: -o-linear-gradient(#5cb9eb, #00536d);
-    background-image: linear-gradient(#00536d, #00536d);*/
     opacity: .7;
 }
 
-/*.navbar {
-	background-color: whitesmoke;
-}*/
 
-/*.shadow {
-	box-shadow: 0 2px 6px 0 rgba(0,0,0,0.24);
-    transition: .3s;
-	transform: translate3d(0,0,0);
-}*/
-
-#site-name {
-	color: rgb(252, 112, 112);
+.navbar-light .navbar-brand,
+.navbar-light .navbar-nav .nav-link {
+    color: whitesmoke;
+	letter-spacing: .5px;
+	transition-duration: 0.3s;
+	transition-delay: 0.2s;
+	border-bottom: 2px transparent solid;
 }
 
-#site-name:hover {
-	color: #ff9166;
-	text-decoration: none;
+.navbar-light .navbar-brand:hover,
+.navbar-light .navbar-nav .nav-link:hover {
+	color: whitesmoke;
+	border-bottom: 2px rgb(252, 112, 112) solid;	
 }
-
 
 .hero-text {
 	position: absolute;
@@ -172,8 +158,10 @@ p {
   	left: 50%;
   	transform: translate(-50%, -50%);
 	text-align: center;
-	color: white;
+	color: whitesmoke;
 	font-size: 4rem;
+	letter-spacing: 1px;
+	
 }
 
 i {
@@ -183,6 +171,11 @@ i {
 .box {
     padding: 3%;
 }
+
+.wrapper {
+	background-color: whitesmoke;
+}
+
 #features-heading p {
 	line-height: 1.5;
 	padding: 3%;
@@ -206,11 +199,13 @@ i {
 /* FOOTER */
 /* --------------------------------------------------------------- */
 
+
 footer p {
 	text-align: center;
 	color: rgb(255, 109, 51);
 	padding: 2em;
 	font-size: .8em;
+	margin-bottom: 0;
 
 }
 
@@ -220,9 +215,32 @@ footer p {
 /* FORMS */
 /* --------------------------------------------------------------- */
 
-.form {
-	width: 40%;
+.section-form {
+	background: -webkit-linear-gradient(#46627f, #34495e);
+	background: -o-linear-gradient(#46627f, #34495e);
+	background: linear-gradient(#46627f, #34495e);
+	height: 100vh;
+	position: relative;
+
 }
+
+
+.form {
+	padding: 4.5em;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background: whitesmoke;
+	border: 1px lightgrey solid;
+	box-shadow: 2px 2px 6px 0 rgba(0,0,0,0.24);
+	transition: .3s;
+	border-radius: .25rem;
+    
+
+}
+
+
 
 .lead {
 	text-align: center;
@@ -234,39 +252,30 @@ footer p {
 }
 
 .red-orange-color a:hover {
-	color: #ff9166;
+	color: rgba(255, 109, 51, .8);
 	text-decoration: none;
 }
 
-#btn-full:link,
-#btn-full:visited,
-input[type=submit] {
-    display: inline-block;    
+.btn {
+    display: block; 
+	width: 100%;
+	margin: 0 auto;   
     padding: 10px 30px;
     font-weight: 300;
     text-decoration: none;
-    border-radius: 200px;
-    transition: background-color 0.2s, border 0.2s, color 0.2s;
-}
-
-#btn-full:link,
-#btn-full:visited,
-input[type=submit] {
-    background-color: rgb(252, 112, 112);
-    border: 1px solid rgb(252, 112, 112);
+    border-radius: .25rem;
+	background-color: rgb(255, 109, 51);
     color: #fff;
     margin-right: 15px;
+    transition: background-color 0.2s, border 0.2s;
+	text-align: center;
+	margin-top: 30px;
 }
 
-#btn-full:active,
-#btn-full:hover,
-input[type=submit] {
-    background-color: #ff9166;
-    border: 1px solid #ff9166;
-    color: #fff;
-    margin-right: 15px;
+.btn:hover,
+.btn:active {
+    background-color: rgba(255, 109, 51, .8);
 }
-
 
 /* --------------------------------------------------------------- */
 /* PROFILE */
@@ -299,9 +308,7 @@ input[type=submit] {
 	background-color: #fcfcfc;
 }
 
-#breakdown-section {
-	min-height: 653px;
-}
+
 
 #love-section {
 	margin-bottom: 5em;

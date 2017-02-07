@@ -1,22 +1,26 @@
 <navigation></navigation>
 
-<section class="container form" id="login-form">
-  <div class="row">    
-    <h2 class="form-signin-heading">Sign in</h2>
-		<hr>
-		<p class="lead">Not a member? Please <span class="red-orange-color"><a href="register">register</a></span> instead.</p>
+<section class="section-form" id="login-form">
+  <div class="form">
+		  
+			<h2 class="form-signin-heading">Sign in</h2>
+			<hr>
+			<p class="lead">Not a member? Please <span class="red-orange-color"><a href="register">register</a></span> instead.</p>
 
-		<form ng-submit="loginCtrl.onSubmit()">
-		  <div class="form-group">
-		    <label for="email">Email address</label>
-		    <input type="email" class="form-control" id="email" placeholder="Enter email" ng-model="loginCtrl.credentials.email">
-		  </div>
-		  <div class="form-group">
-		    <label for="password">Password</label>
-		    <input type="password" class="form-control" id="password" placeholder="Password" ng-model="loginCtrl.credentials.password">
-		  </div>
-		  <input type="submit" id="button"></input>
-		</form>
+			<form ng-submit="loginCtrl.onSubmit()">
+				<div class="form-group">
+					<label for="email">Email address</label>
+					<input type="email" class="form-control" id="email" placeholder="Enter email" ng-model="loginCtrl.credentials.email">
+				</div>
+				<div class="form-group">
+					<label for="password">Password</label>
+					<input type="password" class="form-control" id="password" placeholder="Password" ng-model="loginCtrl.credentials.password">
+				</div>
+				<div class="center">
+					<input type="submit" class="btn"></input>
+				</div>
+			</form>
+		
 	</div>
 </section>
 
