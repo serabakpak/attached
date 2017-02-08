@@ -349,10 +349,12 @@ hr {
 .card {
 	width: 27%;
 	height: auto;
-	max-height: 25em;
+	
 	margin: 0 2em 0 2em;
 	padding-left: 0;
 	padding-right: 0;
+	overflow: auto;
+
 }
 
 .card-block {
