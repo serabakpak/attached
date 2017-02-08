@@ -1,22 +1,35 @@
 <navigation></navigation>
 
 <section class="section container" id="profile-section">
-  <div class="row">  
    
-    	<h2 class="form-signin-heading">All About You!</h2>
-		<hr>
+	<h2 class="form-signin-heading">All About You!</h2>
+	<hr>
 
-  <div class="row">
-		<div class="card shadow" id="profile-card">
-			<img ng-src="{{profileCtrl.user.image}}" id="profile-image" class="match-index-photo card-img-top" alt="{{profileCtrl.user.image}}">
-			<div class="card-block">
-				<h4 class="card-title"><a ng-href="#">{{profileCtrl.user.name}}</a><br></h4>
-				<p class="card-text">{{profileCtrl.user.email}}</p>
-			</div>
+	<div class="card shadow" id="profile-card">
+		<img ng-src="{{profileCtrl.user.image}}" id="profile-image" class="match-index-photo card-img-top" alt="{{profileCtrl.user.image}}">
+		
+		<div class="card-block">
+			<h4 class="card-title"><a ng-href="#">{{profileCtrl.user.name}}</a><br></h4>
+			<p class="card-text">{{profileCtrl.user.email}}</p>
+			<input
+				uploadcare-widget
+				ng-model="object.image.info.uuid"
+				data-public-key="48c63e1c6770a5d45f27"
+				data-tabs="file url"
+				data-images-only="true"
+				data-preview-step="true"
+				data-clearable="true"
+				data-multiple="false"
+				data-crop="200:200"
+				on-upload-complete="onUCUploadComplete(info)"
+				on-widget-ready="onUCWidgetReady(widget)"
+				value="{{ object.image.info.cdnUrl }}"
+			/>
 		</div>
 	</div>
 
-</div>
+
+</section>
 
 
 

@@ -325,11 +325,13 @@ footer p {
 
 .card {
 	width: 27%;
-	height: 25em;
-	max-height: 25em;
+	height: auto;
+	max-height: 30em;
 	margin: 0 2em 0 2em;
 	padding-left: 0;
 	padding-right: 0;
+	overflow: auto;
+
 }
 
 .card-block {

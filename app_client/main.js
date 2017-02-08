@@ -1,5 +1,5 @@
 angular
-    .module('attached', ['ngRoute', 'ngAnimate', 'ngSanitize','ui.bootstrap'])
+    .module('attached', ['ngRoute', 'ngAnimate', 'ngSanitize','ui.bootstrap', 'ng-uploadcare'])
     .config(config)
     .run(run);
 
