@@ -1,33 +1,34 @@
 <navigation></navigation>
 
-<section class="section container" id="assessment-section">
-	<h2>What Is Your Personality?</h2>
-	<hr>
-	<div class="slide-deck"></div>
-	<div class="results"></div>
-</section>	
+<div class="wrapper">
+	<section class="section container" id="personality-section">
+		<h2>What Is Your Personality?</h2>
+		<hr>
+		<div class="slide-deck"></div>
+		<div class="results"></div>
+	</section>	
 
-<section class="section container-fluid" id="breakdown-section" ng-show="assessmentCompleted">
-	<h2 class="bottom-border">Your Personality Breakdown</h2>
-	<div class="personality-types"></div>
-</section>	
-	
-<section class="section container" id="traits-section" ng-show="assessmentCompleted">	
-	<h2 class="bottom-border">Your Top Personality Traits</h2>
-	<div class="personality-traits"></div>
-</section>
+	<section class="section container" id="breakdown-section" ng-show="assessmentCompleted">
+		<h2>Your Personality Breakdown</h2>
+		<div class="personality-types"></div>
+	</section>	
+		
+	<section class="section container" id="traits-section" ng-show="assessmentCompleted">	
+		<h2>Your Top Personality Traits</h2>
+		<div class="personality-traits"></div>
+	</section>
 
 
-<section class="section love container-fluid" id="love-section" ng-show="assessmentCompleted">
-	<h2 class="bottom-border">Compatibility</h2>
-	<h3>Complement</h3><br>
-	<div class="row">
-		<p class="long-copy">{{assessmentCtrl.complement}}</p><br>
-	</div>
-	
-	<h3>Conflict</h3><br>
-	<div class="row">
-		<p class="long-copy">{{assessmentCtrl.conflict}}</p>
-	</div>
-</section>
-
+	<section class="section love container-fluid" id="love-section" ng-show="assessmentCompleted">
+		<h2>Compatibility</h2>
+		<h3>Complement</h3><br>
+		<div class="row">
+			<p class="long-copy">{{assessmentCtrl.complement}}</p><br>
+		</div>
+		
+		<h3>Conflict</h3><br>
+		<div class="row">
+			<p class="long-copy">{{assessmentCtrl.conflict}}</p>
+		</div>
+	</section>
+</div>

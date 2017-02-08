@@ -1,22 +1,18 @@
 <navigation></navigation>
 
-<section class="section container" id="profile-section">
-  <div class="row">  
-   
-    	<h2 class="form-signin-heading">All About You!</h2>
-		<hr>
+<div class="wrapper" id="wrapper-profile">
+	<section class="section container" id="profile-section">  
+		<h2 class="form-signin-heading whitesmoke-color">All About You!</h2>
+		<hr class="whitesmoke-bg">
 
-  <div class="row">
 		<div class="card shadow" id="profile-card">
 			<img ng-src="{{profileCtrl.user.image}}" id="profile-image" class="match-index-photo card-img-top" alt="{{profileCtrl.user.image}}">
 			<div class="card-block">
-				<h4 class="card-title"><a ng-href="#">{{profileCtrl.user.name}}</a><br></h4>
+				<h4 class="card-title red-orange-color"><a ng-href="#">{{profileCtrl.user.name}}</a><br></h4>
 				<p class="card-text">{{profileCtrl.user.email}}</p>
 			</div>
 		</div>
-	</div>
-
+	</section>
 </div>
-
 
 

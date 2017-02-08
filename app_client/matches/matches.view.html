@@ -1,19 +1,21 @@
 <navigation></navigation>
 
-<section class="section container" id="matches-section">	
-	<div class="row">
-		<h2>Check Out These Fine People!</h2>
-		<hr>
-	</div>
-	<div class="row" id="cards-section">
-		<div ng-repeat="match in matchesCtrl.matches" class="col-md-3 card shadow">
-			<img ng-src="{{match.image}}" class="match-index-photo card-img-top" alt="{{match.name}}">
-			<div class="card-block">
-				<h4 class="card-title"><a ng-href="#">{{match.name}}</a><br></h4>
-				<p class="card-text">{{match.personalityBlend}}</p>
+<div class="wrapper" id="wrapper-matches">
+	<section class="section container" id="matches-section">	
+		<div class="row">
+			<h2 class="whitesmoke-color">Check Out These Fine People!</h2>
+			<hr class="whitesmoke-bg">
+		</div>
+		<div class="row" id="cards-section">
+			<div ng-repeat="match in matchesCtrl.matches" class="col-md-3 card shadow">
+				<img ng-src="{{match.image}}" class="match-index-photo card-img-top" alt="{{match.name}}">
+				<div class="card-block">
+					<h4 class="card-title red-orange-color"><a ng-href="#">{{match.name}}</a><br></h4>
+					<p class="card-text">{{match.personalityBlend}}</p>
+				</div>
 			</div>
 		</div>
-	</div>
-</section>
+	</section>
+</div>
 
 

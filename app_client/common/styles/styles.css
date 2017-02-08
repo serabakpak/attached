@@ -46,17 +46,7 @@ hr {
 
 }
 
-.bottom-border:after {
-    display: block;
-    height: 2px;
-    background-color: rgb(252, 112, 112);
-    content: " ";
-    width: 100px;
-    margin: 0 auto;
-    margin-top: 30px;
-    margin-bottom: 30px;
 
-}
 
 p {
 	font-size: 1rem;
@@ -80,6 +70,13 @@ p {
 	color: rgb(255, 109, 51);
 }
 
+.whitesmoke-color {
+	color: whitesmoke;
+}
+
+.whitesmoke-bg {
+	background: whitesmoke;
+}
 
 /* --------------------------------------------------------------- */
 /* HOME */
@@ -108,7 +105,6 @@ p {
 
 
 #video-bg {
-	/*position: fixed;*/
 	right: 0;
 	bottom: 0;
 	width: auto;
@@ -172,7 +168,7 @@ i {
     padding: 3%;
 }
 
-.wrapper {
+.wrapper-home {
 	background-color: whitesmoke;
 }
 
@@ -278,6 +274,28 @@ footer p {
 }
 
 /* --------------------------------------------------------------- */
+/* LAYOUT */
+/* --------------------------------------------------------------- */
+
+.wrapper {
+	padding-top: 5em;
+}
+
+#wrapper-profile,
+#wrapper-matches {
+	background: -webkit-linear-gradient(#46627f, #34495e);
+	background: -o-linear-gradient(#46627f, #34495e);
+	background: linear-gradient(#46627f, #34495e);
+	min-height: 100vh;
+}
+
+hr {
+	margin: 2em 0 2em 0;
+}
+
+
+
+/* --------------------------------------------------------------- */
 /* PROFILE */
 /* --------------------------------------------------------------- */
 
@@ -301,6 +319,7 @@ footer p {
 /* ASSESSMENTS */
 /* --------------------------------------------------------------- */
 
+}
 #breakdown-section, #love-section {
 /*	background-color: #022946;
 	color: whitesmoke;*/
@@ -323,9 +342,13 @@ footer p {
 	width: 100%;
 }
 
+#cards-section {
+	padding: 1em;
+}
+
 .card {
 	width: 27%;
-	height: 25em;
+	height: auto;
 	max-height: 25em;
 	margin: 0 2em 0 2em;
 	padding-left: 0;
