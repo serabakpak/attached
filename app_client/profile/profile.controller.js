@@ -27,7 +27,7 @@ function ProfileController(attachedData, $scope, $http, authentication) {
       }
     }).then (function editSuccess(json) {
       console.log('editing user image', json);
-
+      vm.user.image = json.data.image;
     }, function editError(response) {
       console.log('There an error editing the user\'s photo(profileCtrl)', response);
     });	

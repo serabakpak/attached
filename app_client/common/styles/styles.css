@@ -133,10 +133,12 @@ p {
 }
 
 
+
 .navbar-light .navbar-brand,
 .navbar-light .navbar-nav .nav-link {
     color: whitesmoke;
 	letter-spacing: .5px;
+	margin-left: 1em;
 	transition-duration: 0.3s;
 	transition-delay: 0.2s;
 	border-bottom: 2px transparent solid;
@@ -146,6 +148,11 @@ p {
 .navbar-light .navbar-nav .nav-link:hover {
 	color: whitesmoke;
 	border-bottom: 2px rgb(252, 112, 112) solid;	
+}
+
+#site-name {
+	font-size: 2rem;
+	margin-left: 0;
 }
 
 .hero-text {
@@ -268,9 +275,25 @@ footer p {
 	margin-top: 30px;
 }
 
+
+
 .btn:hover,
 .btn:active {
     background-color: rgba(255, 109, 51, .8);
+}
+
+.btn-lg {
+	display: block;
+	width: 100%;
+	padding: 1em;
+	letter-spacing: 2px;
+	font-size: 2rem;
+	margin-top: 3em;
+
+}
+
+.btn-lg:hover {
+	color: white;
 }
 
 /* --------------------------------------------------------------- */
@@ -333,6 +356,10 @@ hr {
 	margin-bottom: 5em;
 }
 
+.center {
+	width: 50%;
+	margin: 0 auto;
+}
 
 /* --------------------------------------------------------------- */
 /* MATCHES */
@@ -349,7 +376,7 @@ hr {
 .card {
 	width: 27%;
 	height: auto;
-	
+
 	margin: 0 2em 0 2em;
 	padding-left: 0;
 	padding-right: 0;
